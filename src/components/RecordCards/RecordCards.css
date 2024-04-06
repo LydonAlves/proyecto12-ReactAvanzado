@@ -1,0 +1,139 @@
+.cardContainer {
+  overflow-y: auto;
+  margin: 25px 40px;
+  margin-right: 0px;
+  height: 88svh;
+  width: 50%;
+  min-width: 300px;
+}
+
+.cardContainer::-webkit-scrollbar {
+  width: 15px;
+}
+
+.cardContainer::-webkit-scrollbar-track {
+  background: var(--color-01);
+}
+
+.cardContainer::-webkit-scrollbar-thumb {
+  background: var(--color-04);
+}
+
+.individualCard {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-01);
+  border-radius: var(--border-radius);
+  padding: var(--padding-s) var(--padding-s);
+  margin: 0px 40px var(--margin-s) 20px;
+  box-shadow: -1px 1px 5px 2px rgba(0, 0, 0, 0.082);
+}
+
+.cardDiv {
+  display: flex;
+  color: var(--color-04);
+  font-weight: 600;
+  gap: var(--gap-xs);
+  margin-bottom: var(--margin-xs);
+}
+
+.textareaDiv {
+  display: flex;
+  color: var(--color-04);
+  font-weight: 600;
+  gap: var(--gap-xs);
+}
+
+.cardTitle {
+  width: max-content;
+}
+
+.cardInput {
+  height: 20px;
+  background-color: var(--color-01);
+  border: none;
+  width: 95px;
+}
+
+.cardTextarea {
+  width: 100%;
+  border: none;
+  background-color: var(--color-01);
+  padding-top: 2px;
+  resize: none;
+  overflow-y: auto;
+  width: min-content;
+}
+
+.cardButtonDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.deleteButton {
+  border-radius: var(--border-radius-circle);
+  height: 30px;
+  width: 30px;
+  border: none;
+  background-color: var(--color-03);
+  color: var(--color-01);
+  font-weight: 800;
+  align-self: flex-end;
+  font-size: medium;
+  transition: transform 0.3s ease;
+}
+
+.deleteButton:hover {
+  transform: scale(1.1);
+}
+
+.editButton {
+  width: 50px;
+  border: none;
+  color: var(--color-01);
+  background-color: var(--color-04);
+  border: var(--color-04) solid 1px;
+  border-radius: var(--border-radius);
+  padding: var(--padding-xxs) var(--padding-l);
+  font-size: medium;
+  display: flex;
+  justify-content: center;
+  transition: 1000ms;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  background-color: var(--color-01);
+  color: var(--color-04);
+  font-weight: 600;
+  transition: 500ms;
+}
+
+@media (max-width: 1270px) {
+  .cardContainer {
+    width: 95%;
+    align-self: center;
+    overflow-y: scroll;
+  }
+
+  .individualCard {
+    max-width: 650px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .cardContainer {
+    margin: 0;
+  }
+
+  .individualCard {
+    margin-right: var(--margin-xs);
+    flex-direction: column;
+  }
+
+  .cardButtonDiv {
+    flex-direction: row-reverse;
+  }
+}

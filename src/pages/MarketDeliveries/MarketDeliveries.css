@@ -1,0 +1,26 @@
+.deliveriesSection {
+  height: 94svh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-02);
+}
+
+@media (max-width: 1270px) {
+  .deliveriesSection {
+    justify-content: center;
+    flex-direction: column-reverse;
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 700px) {
+  .deliveriesSection {
+    height: 94svh;
+    flex-direction: column-reverse;
+    overflow-y: hidden;
+  }
+  .formAndGraphContainer {
+    height: 450px;
+  }
+}

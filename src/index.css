@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --color-01: #ffffff;
+  --color-02: #f0f0f0;
+  --color-03: #ff384a;
+  --color-04: #204e51;
+
+  /* SPACINGS */
+  --margin-xxxs: 3px;
+  --margin-xxs: 5px;
+  --margin-xs: 10px;
+  --margin-s: 20px;
+  --margin-m: 30px;
+  --margin-l: 40px;
+  --margin-xl: 50px;
+  --margin-xxl: 60px;
+
+  --padding-xxs: 5px;
+  --padding-xs: 10px;
+  --padding-s: 20px;
+  --padding-m: 30px;
+  --padding-l: 40px;
+  --padding-xl: 50px;
+  --padding-xxl: 60px;
+
+  --gap-xs: 10px;
+  --gap-s: 20px;
+  --gap-m: 30px;
+  --gap-l: 40px;
+  --gap-xl: 50px;
+  --gap-xxl: 60px;
+
+  /* BORDER RADIUS */
+  --border-radius: 25px;
+  --border-radius-circle: 100%;
+}

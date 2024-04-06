@@ -1,0 +1,33 @@
+.homeDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+  background-color: rgba(255, 255, 255, 0.855);
+  padding: 40px;
+  padding-bottom: 10px;
+}
+
+.homeDiv > ul {
+  font-size: small;
+}
+
+.homeSection {
+  background-image: url('/assets/Passion.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 94svh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .homeDiv {
+    padding: var(--padding-xs);
+    padding-right: var(--padding-m);
+    padding-left: 0px;
+  }
+}

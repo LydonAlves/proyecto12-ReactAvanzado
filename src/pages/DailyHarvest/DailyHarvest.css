@@ -1,0 +1,115 @@
+.harvestSection {
+  height: 94svh;
+  width: 100%;
+  display: flex;
+  background-color: var(--color-02);
+}
+
+.formAndGraphContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  padding: var(--padding-m);
+}
+
+.formWrp {
+  max-width: 600px;
+  padding: 30px 40px;
+  background-color: var(--color-01);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #0000004d;
+  height: max-content;
+  width: 300px;
+}
+
+.formTitle {
+  color: var(--color-04);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.recordTakingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-evenly;
+  height: 80%;
+}
+
+.formLabel {
+  color: var(--color-04);
+  width: 50%;
+}
+
+.formDataInputDiv {
+  display: flex;
+}
+
+.submitButton {
+  width: 50px;
+  width: max-content;
+  border: none;
+  color: var(--color-01);
+  background-color: var(--color-04);
+  border: var(--color-04) solid 1px;
+  border-radius: var(--border-radius);
+  padding: var(--padding-xxs) var(--padding-xl);
+  font-size: medium;
+  display: flex;
+  justify-content: center;
+  transition: 1000ms;
+  cursor: pointer;
+  align-self: center;
+  margin-top: var(--margin-xs);
+}
+
+.submitButton:hover {
+  background-color: var(--color-01);
+  color: var(--color-04);
+  font-weight: 600;
+  transition: 500ms;
+}
+
+.formInput {
+  color: var(--color-04);
+  border: solid 1px var(--color-04);
+  background-color: var(--color-01);
+  width: 100px;
+  height: 25px;
+  text-align: center;
+}
+
+.hideInputBorder {
+  border: none;
+}
+
+.harvesGraphDiv {
+  width: 500px;
+  margin-right: var(--margin-xs);
+}
+
+@media (max-width: 1270px) {
+  .harvestSection {
+    justify-content: center;
+    flex-direction: column-reverse;
+    overflow-y: hidden;
+  }
+
+  .cardUl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .formAndGraphContainer {
+    width: 100%;
+    height: 100svh;
+  }
+
+  .harvesGraphDiv {
+    display: none;
+  }
+}

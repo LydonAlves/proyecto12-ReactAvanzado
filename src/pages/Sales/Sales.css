@@ -1,0 +1,132 @@
+.salesSection {
+  height: 94svh;
+  width: 100%;
+  display: flex;
+  padding: var(--padding-l);
+  justify-content: space-between;
+  background-color: var(--color-02);
+  align-items: center;
+}
+
+.salesPageGraphDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  padding: var(--padding-m);
+}
+
+.salesFormWrp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 40px;
+  background-color: var(--color-01);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #0000004d;
+  height: 80%;
+  width: 50%;
+  min-width: 600px;
+  gap: var(--gap-m);
+}
+
+.salesForm {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  height: 366px;
+}
+
+.unitsSoldForm {
+  width: 235px;
+}
+
+.salesDeliveriesInputDiv {
+  padding-top: var(--padding-s);
+  border-bottom: solid var(--color-04) 1px;
+}
+
+.salesUnitsDiv {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: var(--margin-s);
+}
+
+.unitSoldTitle {
+  color: var(--color-04);
+  margin-top: var(--margin-s);
+}
+
+.unitsSoldInputDiv {
+  padding: var(--margin-xs) 0px;
+}
+
+#selectDelivery {
+  border: 1px var(--color-04) solid;
+  border: none;
+  color: var(--color-01);
+  background-color: var(--color-04);
+  border-radius: var(--border-radius);
+  padding: 2px var(--padding-xs);
+  font-weight: 600;
+  text-align: center;
+}
+
+#selectDelivery::-webkit-scrollbar {
+  width: 10px;
+}
+
+#selectDelivery::-webkit-scrollbar-track {
+  background: var(--color-01);
+}
+
+#selectDelivery::-webkit-scrollbar-thumb {
+  background: var(--color-04);
+  border-left: 1px solid var(--color-01);
+}
+
+.dropDownOption {
+  text-align: start;
+}
+
+@media (max-width: 700px) {
+  .salesSection {
+    justify-content: center;
+  }
+
+  .salesPageGraphDiv {
+    padding: 0px;
+  }
+
+  .salesFormWrp {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    width: 60%;
+    height: min-content;
+    min-width: 250px;
+    padding-bottom: var(--padding-xs);
+    gap: var(--gap-xs);
+  }
+
+  .salesForm {
+    height: max-content;
+  }
+
+  .salesForm > h2 {
+    margin: 0px;
+    padding: var(--padding-xs);
+  }
+
+  .unitSoldTitle {
+    margin: 0px;
+  }
+
+  .salesUnitsDiv {
+    margin: 0px;
+  }
+}

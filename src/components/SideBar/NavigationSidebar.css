@@ -1,0 +1,118 @@
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--color-04);
+  height: 100svh;
+  padding-top: var(--padding-m);
+  align-items: center;
+  width: 280px;
+}
+
+.profileDiv {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileImgDiv {
+  border-radius: var(--border-radius-circle);
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 2px rgba(255, 255, 255, 0.551) solid;
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileUserName {
+  color: var(--color-01);
+  padding: 0px var(--padding-s);
+  width: 40%;
+}
+
+.sideBarUl {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: x-large;
+  font-weight: 700;
+  width: 200px;
+}
+
+.sideBarLink {
+  color: var(--color-01);
+  display: flex;
+  align-items: center;
+}
+
+.sideBarTitle {
+  padding: var(--padding-xs) var(--padding-s);
+}
+
+.homeLi {
+  display: flex;
+}
+
+.sideBarTitle:hover {
+  cursor: pointer;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.graphButtonsContainer {
+  margin-left: 20px;
+  padding: 0px;
+}
+
+.menuDiv {
+  z-index: 9999;
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  display: block;
+  filter: invert(40%);
+}
+
+.menuIcon {
+  width: 15px;
+  height: 15px;
+}
+
+.openClass {
+  filter: invert(100%);
+}
+
+@media (max-width: 700px) {
+  .sideBar {
+    z-index: 99;
+    position: absolute;
+    width: 200px;
+    font-size: small;
+  }
+
+  .profileDiv {
+    margin-top: var(--margin-s);
+    margin-left: var(--margin-m);
+    justify-content: flex-start;
+  }
+
+  .profileImgDiv {
+    height: 50px;
+    width: 50px;
+  }
+
+  .sideBarUl {
+    font-size: small;
+  }
+}
