@@ -2,20 +2,46 @@ import { NavLink } from 'react-router-dom'
 import './NavigationSidebar.css'
 import ChooseGraphButtons from '../ChooseGraphButtons/ChooseGraphButtons'
 import useToggle from '../../custom/useToggle'
-import { useState } from 'react'
 
 const NavigationSidebar = () => {
   const { open, openElement, closeElement } = useToggle()
 
   const handleDropdownClick = (e) => {
-    console.log('working')
     e.stopPropagation()
   }
 
-  const toggleDropdown = (e) => {
-    e.stopPropagation()
-    open ? closeElement() : openElement()
-  }
+  const navLinks = [
+    {
+      title: 'Home',
+      path: '/home',
+      className: 'sideBarLink',
+      activeClassName: 'active',
+      additionalContent: open ? (
+        <div onClick={handleDropdownClick}>
+          <ChooseGraphButtons />
+        </div>
+      ) : null
+    },
+    {
+      title: 'Daily Harvest',
+      path: '/daily-harvest',
+      className: 'sideBarLink',
+      activeClassName: 'active'
+    },
+    {
+      title: 'Market Deliveries',
+      path: '/market-deliveries',
+      className: 'sideBarLink',
+      activeClassName: 'active'
+    },
+    {
+      title: 'Sales',
+      path: '/sales',
+      className: 'sideBarLink',
+      activeClassName: 'active'
+    }
+  ];
+
 
   return (
     <>
@@ -37,52 +63,22 @@ const NavigationSidebar = () => {
             </div>
             <p className='profileUserName'>Hello Fatima</p>
           </div>
-          <ul className='sideBarUl'>
-            <li className='sideBarTitle'>
-              <div className='homeLi'>
-                <NavLink
-                  to='/home'
-                  activeclassname='active'
-                  className='sideBarLink'
-                >
-                  Home
-                </NavLink>
-              </div>
-              {open && (
-                <div onClick={handleDropdownClick}>
-                  <ChooseGraphButtons />
-                </div>
-              )}
-            </li>
 
-            <li className='sideBarTitle '>
-              <NavLink
-                to='/daily-harvest'
-                activeclassname='active'
-                className='sideBarLink'
-              >
-                Daily Harvest
-              </NavLink>
-            </li>
-            <li className='sideBarTitle'>
-              <NavLink
-                to='/market-deliveries'
-                activeclassname='active'
-                className='sideBarLink'
-              >
-                Market Deliveries
-              </NavLink>
-            </li>
-            <li className='sideBarTitle'>
-              <NavLink
-                to='/sales'
-                activeclassname='active'
-                className='sideBarLink'
-              >
-                Sales
-              </NavLink>
-            </li>
+          <ul>
+            {navLinks.map((link, index) => (
+              <li className='sideBarTitle' key={index}>
+                <NavLink
+                  to={link.path}
+                  activeclassname={link.activeClassName}
+                  className={link.className}
+                >
+                  {link.title}
+                </NavLink>
+                {link.additionalContent}
+              </li>
+            ))}
           </ul>
+
         </nav>
       )}
     </>

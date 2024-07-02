@@ -10,14 +10,19 @@ import {
   Legend
 } from 'recharts'
 import { DataContext } from '../../context/DataContext'
+import { getGraphHeight, getGraphWidth } from '../../utils/getGraphWidthHeight'
+import useWindowSize from '../../custom/useWindowHook'
 
 const DeliveriesTotalGraph = ({ width, height }) => {
+  const screenWidth = useWindowSize()
+  const graphWidth = width ? width : getGraphWidth(screenWidth)
+  const graphHeight = height ? height : getGraphHeight(screenWidth)
   const { deliveriesGraphData } = useContext(DataContext)
   const dataToShow = deliveriesGraphData.slice(0, 15)
 
   return (
     <>
-      <ComposedChart width={width} height={height} data={dataToShow}>
+      <ComposedChart width={graphWidth} height={graphHeight} data={dataToShow}>
         <Tooltip />
         <Legend />
         <Line

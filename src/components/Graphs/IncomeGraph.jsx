@@ -10,14 +10,20 @@ import {
   Legend
 } from 'recharts'
 import { DataContext } from '../../context/DataContext'
+import { getGraphHeight, getGraphWidth } from '../../utils/getGraphWidthHeight'
+import useWindowSize from '../../custom/useWindowHook'
 
 const IncomeGraph = ({ width, height }) => {
+  const screenWidth = useWindowSize()
   const { transformedSalesDetails } = useContext(DataContext)
+  const graphWidth = width ? width : getGraphWidth(screenWidth)
+  const graphHeight = height ? height : getGraphHeight(screenWidth)
+
   return (
     <>
       <ComposedChart
-        width={width}
-        height={height}
+        width={graphWidth}
+        height={graphHeight}
         data={transformedSalesDetails}
       >
         <Tooltip />

@@ -2,82 +2,71 @@ import { NavLink } from 'react-router-dom'
 import './ChooseGraphButtons.css'
 
 const ChooseGraphButtons = () => {
+  const graphLinks = [
+    {
+      title: 'Daily temperature and harvest',
+      path: '/home/temperatureAndHarvest',
+      className: 'sideBarLink graphLink',
+      activeClassName: 'active'
+    },
+    {
+      title: 'Daily harvest',
+      path: 'home/dailyHarvest',
+      className: 'sideBarLink graphLink',
+      activeClassName: 'active'
+    },
+    {
+      title: 'Punnets sold',
+      path: '/home/punnetsSold',
+      className: 'sideBarLink graphLink',
+      activeClassName: 'active'
+    },
+    {
+      title: 'Pulp sold',
+      path: '/home/pulpSold',
+      className: 'sideBarLink graphLink',
+      activeClassName: 'active'
+    },
+    {
+      title: 'Income',
+      path: '/home/income',
+      className: 'sideBarLink graphLink',
+      activeClassName: 'active'
+    },
+    {
+      title: 'Total number of units delivered',
+      path: '/home/totalDeliveries',
+      className: 'sideBarLink graphLink',
+      activeClassName: 'active'
+    },
+    {
+      title: 'Deliveries: punnets',
+      path: '/home/deliveriesPunnets',
+      className: 'sideBarLink graphLink',
+      activeClassName: 'active'
+    },
+    {
+      title: 'Deliveries: pulp',
+      path: '/home/deliveriesPulp',
+      className: 'sideBarLink graphLink',
+      activeClassName: 'active'
+    }
+  ];
+
   return (
     <nav className='graphNav'>
       <ul className='graphUl'>
-        <li>
-          <NavLink
-            to='/home/temperatureAndHarvest'
-            activeclassname='active'
-            className='sideBarLink graphLink'
-          >
-            Daily temperature and harvest
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='home/dailyHarvest'
-            activeclassname='active'
-            className='sideBarLink graphLink'
-          >
-            Daily harvest
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/home/punnetsSold'
-            activeclassname='active'
-            className='sideBarLink graphLink'
-          >
-            Punnets sold
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/home/pulpSold'
-            activeclassname='active'
-            className='sideBarLink graphLink'
-          >
-            Pulp sold
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink
-            to='/home/income'
-            activeclassname='active'
-            className='sideBarLink  graphLink'
-          >
-            Income
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/home/totalDeliveries'
-            activeclassname='active'
-            className='sideBarLink graphLink'
-          >
-            Total number of units delivered
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/home/deliveriesPunnets'
-            activeclassname='active'
-            className='sideBarLink graphLink'
-          >
-            Deliveries: punnets
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/home/deliveriesPulp'
-            activeclassname='active'
-            className='sideBarLink graphLink'
-          >
-            Deliveries: pulp
-          </NavLink>
-        </li>
+        {graphLinks.map((link, index) => (
+          <li key={index}>
+            <NavLink
+              to={link.path}
+              activeclassname={link.activeClassName}
+              className={link.className}
+            >
+              {link.title}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   )

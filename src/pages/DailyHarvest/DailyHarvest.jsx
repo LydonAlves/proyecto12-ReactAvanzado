@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid'
 import { updateItemById } from '../../utils/updateItemById'
 import { DataContext } from '../../context/DataContext'
 import { deleteItemById } from '../../utils/deleteItemById'
-
 import ErrorsAlert from '../../components/ErrorsComponent/ErrorsAlert'
 import RecordCards from '../../components/RecordCards/RecordCards'
 import { harvestFieldDefinitions } from '../../utils/fieldDefinitions'
@@ -13,15 +12,16 @@ import { dataChecker } from '../../utils/dateChecker'
 import useCheckForExistingData from '../../custom/useCheckForExistingData'
 import useMaxTemp from '../../custom/useMaxTemp'
 import { DateContext } from '../../context/DateContext'
-import DailyHarvestGraph from '../../components/Graphs/DailyHarvestGraph'
 import { validateFormData } from '../../utils/validateFormData'
 import updateEditedForm from '../../utils/updateEditedForm'
 import { INITIAL_ERROR_STATE, errorReducer } from '../../reducers/ErrorsReducer'
 import useCheckForCurrentDateInfo from '../../custom/useCheckForCurrentDateInfo'
 import findTodaysAction from '../../utils/findTodaysAction'
 import { INITIAL_FORM_STATE, formReducer } from '../../reducers/FormReducer'
+import CartesianGridGraph from '../../components/Graphs/CartesianGridGraph'
 
 const DailyHarvest = () => {
+  //!----------------------------------------------------------------------------
   const [stateForm, dispatchForm] = useReducer(formReducer, INITIAL_FORM_STATE)
   const [stateErrors, dispatchErrors] = useReducer(
     errorReducer,
@@ -29,6 +29,8 @@ const DailyHarvest = () => {
   )
   const { harvestDataState, setHarvestDataState } = useContext(DataContext)
   const { date, bucketsHarvested, comments } = stateForm.harvestForm
+  //!----------------------------------------------------------------------------
+
   const { errors } = stateErrors
   const clearHarvestFormData = INITIAL_FORM_STATE.harvestForm
   const existingData = dataChecker(harvestDataState, date)
@@ -85,7 +87,6 @@ const DailyHarvest = () => {
     console.log(errorMessages[0])
 
     if (errorMessages.length > 0) {
-      // addError(errorMessages[0])
       dispatchErrors({
         type: 'CREATE_ERRORS',
         payload: errorMessages
@@ -105,6 +106,14 @@ const DailyHarvest = () => {
     dispatchForm,
     harvestFormActive
   )
+
+  const dailyHarvestGraphData = {
+    data: harvestDataState,
+    lineDataKey: 'bucketsHarvested',
+    name: 'Buckets harvested',
+    width: 500,
+    height: 250
+  }
 
   return (
     <section className='harvestSection'>
@@ -182,7 +191,9 @@ const DailyHarvest = () => {
           </form>
         </div>
         <div className='harvesGraphDiv'>
-          <DailyHarvestGraph width={500} height={250} />
+          <CartesianGridGraph
+            graphData={dailyHarvestGraphData}
+          />
         </div>
       </div>
     </section>

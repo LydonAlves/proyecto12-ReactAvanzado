@@ -9,12 +9,18 @@ import {
   YAxis
 } from 'recharts'
 import { DataContext } from '../../context/DataContext'
+import { getGraphHeight, getGraphWidth } from '../../utils/getGraphWidthHeight'
+import useWindowSize from '../../custom/useWindowHook'
 
 const TempHarvestGraph = ({ width, height }) => {
+  const screenWidth = useWindowSize()
   const { harvestDataState } = useContext(DataContext)
+  const graphWidth = width ? width : getGraphWidth(screenWidth)
+  const graphHeight = height ? height : getGraphHeight(screenWidth)
+
   return (
     <>
-      <LineChart width={width} height={height} data={harvestDataState}>
+      <LineChart width={graphWidth} height={graphHeight} data={harvestDataState}>
         <Tooltip />
         <Legend />
         <Line
