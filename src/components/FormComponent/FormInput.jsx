@@ -12,7 +12,7 @@ const FormInput = ({
   dispatch,
   disabled
 }) => {
-  // console.log(inputClass)
+
   return (
     <div className={divClass}>
       <label className={labelClass}> {labelText} </label>

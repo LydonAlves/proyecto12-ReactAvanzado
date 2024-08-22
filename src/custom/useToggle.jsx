@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const useToggle = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
 
   const openElement = () => {
     setOpen(true)

@@ -27,14 +27,13 @@ export const INITIAL_FORM_STATE = {
 }
 
 export function formReducer(state, action) {
-  // console.log('Current State:', state)
-  // console.log('Action:', action.payload.formType)
   switch (action.type) {
     case 'SET_EDIT_ITEM_ID':
       return {
         ...state,
         editItemId: action.payload
       }
+
     case 'UPDATE_FORM':
       const { formType, data } = action.payload
       return {

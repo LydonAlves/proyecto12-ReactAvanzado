@@ -16,13 +16,13 @@
 }
 
 .formWrp {
-  max-width: 600px;
   padding: 30px 40px;
   background-color: var(--color-01);
   border-radius: 8px;
   box-shadow: 0 4px 8px #0000004d;
   height: max-content;
-  width: 300px;
+  width: 60%;
+  min-width: 300;
 }
 
 .formTitle {
@@ -34,7 +34,6 @@
 .recordTakingForm {
   display: flex;
   flex-direction: column;
-  gap: 15px;
   justify-content: space-evenly;
   height: 80%;
 }
@@ -46,6 +45,8 @@
 
 .formDataInputDiv {
   display: flex;
+  justify-content: center;
+  margin-bottom: var(--margin-xs);
 }
 
 .submitButton {
@@ -63,7 +64,6 @@
   transition: 1000ms;
   cursor: pointer;
   align-self: center;
-  margin-top: var(--margin-xs);
 }
 
 .submitButton:hover {
@@ -77,10 +77,27 @@
   color: var(--color-04);
   border: solid 1px var(--color-04);
   background-color: var(--color-01);
-  width: 100px;
+  width: 120px;
   height: 25px;
   text-align: center;
+
 }
+
+.formTextAreaDiv{
+  width: 100%;
+  margin-bottom: var(--margin-xs);
+}
+
+.formTextArea{
+  height: 100px;
+  width: 100%;
+  padding: var(--padding-xxs);
+}
+
+.formTextArea:focus{
+  outline: none;
+}
+
 
 .hideInputBorder {
   border: none;

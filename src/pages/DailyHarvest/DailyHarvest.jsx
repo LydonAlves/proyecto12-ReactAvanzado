@@ -21,7 +21,6 @@ import { INITIAL_FORM_STATE, formReducer } from '../../reducers/FormReducer'
 import CartesianGridGraph from '../../components/Graphs/CartesianGridGraph'
 
 const DailyHarvest = () => {
-  //!----------------------------------------------------------------------------
   const [stateForm, dispatchForm] = useReducer(formReducer, INITIAL_FORM_STATE)
   const [stateErrors, dispatchErrors] = useReducer(
     errorReducer,
@@ -29,7 +28,6 @@ const DailyHarvest = () => {
   )
   const { harvestDataState, setHarvestDataState } = useContext(DataContext)
   const { date, bucketsHarvested, comments } = stateForm.harvestForm
-  //!----------------------------------------------------------------------------
 
   const { errors } = stateErrors
   const clearHarvestFormData = INITIAL_FORM_STATE.harvestForm
@@ -75,7 +73,7 @@ const DailyHarvest = () => {
       maxTemp: maxTemp
     }
 
-    //! this is an array of functions. New data is added to each function so we can look at its details
+
     const validations = [
       (newData) =>
         newData.bucketsHarvested === '' || newData.bucketsHarvested === '0'
@@ -175,11 +173,11 @@ const DailyHarvest = () => {
             />
             <FormInput
               value={comments}
-              divClass={'formDataInputDiv'}
+              divClass={'formTextAreaDiv'}
               labelText={'Comments:'}
               labelClass={'formLabel'}
               inputType={'textarea'}
-              inputClass={'formInput'}
+              inputClass={'formTextArea'}
               formType={'harvestForm'}
               fieldName={'comments'}
               dispatch={dispatchForm}
